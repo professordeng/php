@@ -8,6 +8,9 @@ if(! $conn )
     die('Could not connect: ' . mysqli_error());
 }
 echo '数据库连接成功！';
-mysql_select_db($conn, 'blog');
+$result =  mysqli_select_db($conn, 'blog');
+if($result){
+	echo '选择 blog 数据库成功';
+}
 mysqli_close($conn);
 ?>
